@@ -88,12 +88,13 @@
             font-weight: bold;
             letter-spacing: 2px;
             line-height: 16px;
+            margin-bottom: 6px;
         }
 
-        #img2 {
-            height: 24px;
-            width: 24px;
-            margin-right: 4px;
+        #img2,#img3 {
+            height: 28px;
+            width: 28px;
+            margin-right: 6px;
             line-height: 1;
             vertical-align: middle;
         }
@@ -131,7 +132,7 @@
             padding-left: 10%;
         }
 
-        #span1 {
+        .span-c1 {
             font-size: 24px;
             /* font-weight: bold; */
             color: #271f9b;
@@ -156,7 +157,7 @@
         ul{
             margin: 0px;
             padding: 0px;
-            padding-left: 20px;
+            padding-left: 28px;
         }
         li::marker{
             padding-left: 0px;
@@ -175,12 +176,37 @@
             line-height: 1;
             vertical-align: middle;
         }
+        #div4{
+            margin-top: 4px;
+            padding-left: 10%;
+        }
+        #div5{
+            margin-top: 10px;
+            margin-bottom: 16px;
+            padding-left: 12%;
+            padding-right: 12%;
+            display: flex;
+            flex-direction:column;
+            
+        }
+        .div5-c1{
+            font-size: 20px;
+            line-height: 24px;
+            margin-top: 6px;
+        }
+        #span1{
+            color: rgb(26, 97, 228);
+        }
+        #span2{
+            color:rgb(100, 45, 20)
+        }
     </style>
     <script>
 
         function start() {
             console.log("start!");
-
+            let myage=new Date().getFullYear()-2000;
+            $('#age').text("( "+myage+"歲 )");
         }
 
         window.addEventListener("load", start, false);
@@ -193,19 +219,30 @@
             <div id="div1_1"><img src="dog1.jpg" id="img1"></div>
             <div id="div1_2">
                 <div id="div1_21">陳博脩</div>
-                <div id="div1_22"><img src="NTOU2.png" id="img2">國立臺灣海洋大學 資訊工程系</div>
+                <!-- <div id="div1_22"><img src="NTOU2.png" id="img2">國立臺灣海洋大學 資訊工程系</div> -->
+                <div id="div1_22">ERP設計 網頁開發設計</div>
                 <div id="div1_23">
                     學習並實作<br>
                     1. 響應式網頁 (HTML/CSS/JS/PHP/MY SQL)<br>
                     2. ERP系統-Window Form (FoxPro9/SQL Server )<br>
                     &nbsp; &nbsp; a. 進貨銷貨存貨模塊<br>
-                    &nbsp; &nbsp; b. 會計模塊
+                    &nbsp; &nbsp; b. 會計財務模塊
                 </div>
             </div>
         </div>
         <hr class="hr-c1">
+        <div id="div4">
+            <span class="span-c1">個人檔案</span>
+        </div>
+        <div id="div5">
+            <div class="div5-c1">學歷 :  &nbsp; &nbsp;<img src="NTOU2.png" id="img2"><span id="span1">國立臺灣海洋大學 資訊工程系 </span><span id="span2">畢業</span></div>
+            <div class="div5-c1">生日 :  &nbsp; &nbsp;2000-03-20 <span id="age"></span></div>
+            <div class="div5-c1">兵役 :  &nbsp; &nbsp;免役</div>
+            <div class="div5-c1">居住地 :  &nbsp; &nbsp;<img src="location.png" id="img3">新北市鶯歌區</div>
+        </div>
+        <hr class="hr-c1">
         <div id="div2">
-            <span id="span1">擅長工具 / 技能 Skills</span>
+            <span class="span-c1">擅長工具 / 技能 Skills</span>
         </div>
         <div id="div3">
             <div class="div3-c1">
@@ -223,6 +260,8 @@
                 <ul class="ul-c1">
                     <li><img src="java.png" class="img-c1">JAVA</li>
                     <li><img src="c++.png" class="img-c1">C++</li>
+                    <li><img src="mysql.png" class="img-c1">MySQL</li>
+                    <li><img src="mssql.png" class="img-c1">SQL Server</li>
                 </ul>
             </div>
             <div class="div3-c1">
@@ -234,6 +273,7 @@
             </div>  
         </div>
         <hr class="hr-c1">
+        
     </div>
 
 </body>
