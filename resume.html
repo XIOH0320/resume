@@ -9,42 +9,178 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <style type="text/css">
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
         body {
             margin: 0px;
-            background-color: #dbf1f8;
-            font-family: Microsoft JhengHei, sans-serif;
+            background-color: #eeeeee;
+            font-family: "Archivo", "Noto Sans TC", "Noto Sans SC", "Noto Sans HK", "Noto Sans JP", "Noto Sans", "PingFang TC", "Microsoft JhengHei", "PMingLiU", sans-serif;
+            color: #333333;
         }
+
         div {
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
         }
+
         div:hover,
         p:hover {
             cursor: default;
         }
-        input{
+
+        input {
             outline: none;
         }
+
         a,
         a:active {
             color: blue;
         }
 
-        #div1 {
-            padding: 0px;
-            padding-top: 10px;
-            text-align: center;
-            width: 100%;
-            height: 20px;
-            background-color: #83C5BE;
+        #div0 {
+            margin: 40px 10%;
+            padding: 10px 0px 0px 0px;
+            /* text-align: center; */
+            width: 80%;
+            height: auto;
         }
 
+        #div1 {
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+
+        #div1_1 {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 0.3;
+            padding: 10px;
+            padding-right: 30px;
+        }
+
+        #img1 {
+            height: 160px;
+            width: 160px;
+            border-radius: 50%;
+
+        }
+
+        #div1_2 {
+            display: flex;
+            flex-grow: 0.9;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 10px;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        #div1_21 {
+
+            font-size: 28px;
+            letter-spacing: 6px;
+        }
+
+        #div1_22 {
+            font-size: 20px;
+            padding-top: 6px;
+            color: royalblue;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 16px;
+        }
+
+        #img2 {
+            height: 24px;
+            width: 24px;
+            margin-right: 4px;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        #div1_23 {
+            display: flex;
+            font-size: 16px;
+            padding-top: 6px;
+            padding-left: 10px;
+            line-height: 22px;
+            /* flex-wrap: wrap; */
+            word-break: break-all;
+            word-wrap: break-word;
+            font-family: "Microsoft JhengHei";
+        }
+
+        .hr-c1 {
+            border: 0;
+            color: #b5b5ca;
+            height: .5em;
+            white-space: nowrap;
+            letter-spacing: 100vw;
+            padding-top: .5em;
+            width: 80%;
+        }
+
+        .hr-c1::before {
+            content: "\2000\2000";
+            text-decoration: overline;
+            text-decoration: overline wavy;
+        }
+
+        #div2 {
+            margin-top: 20px;
+            padding-left: 10%;
+        }
+
+        #span1 {
+            font-size: 24px;
+            /* font-weight: bold; */
+            color: #271f9b;
+        }
+
+        #div3 {
+            margin-top: 30px;
+            margin-bottom: 24px;
+            padding-left: 12%;
+            padding-right: 12%;
+            display: flex;
+        }
+        .div3-c1{
+            display: flex;
+            flex-grow: 1;
+            flex-direction:column;
+        }
+        .div3-c2{
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+        ul{
+            margin: 0px;
+            padding: 0px;
+            padding-left: 20px;
+        }
+        li::marker{
+            padding-left: 0px;
+            margin: 0px;
+        }
+        li{
+            font-size: 18px;
+            line-height: 12px;
+            margin-bottom: 4px;
+        }
+        .img-c1{
+            height: 40px;
+            width: auto;
+            max-width: 40px;
+            margin-right: 6px;
+            line-height: 1;
+            vertical-align: middle;
+        }
     </style>
     <script>
-        let but_guest, but_login, input_account, input_password, span_findpw;
-        
+
         function start() {
             console.log("start!");
-           
+
         }
 
         window.addEventListener("load", start, false);
@@ -52,8 +188,54 @@
 </head>
 
 <body>
-    <div id='div1'>我的履歷</div>
-    
+    <div id='div0'>
+        <div id="div1">
+            <div id="div1_1"><img src="dog1.jpg" id="img1"></div>
+            <div id="div1_2">
+                <div id="div1_21">陳博脩</div>
+                <div id="div1_22"><img src="NTOU2.png" id="img2">國立臺灣海洋大學 資訊工程系</div>
+                <div id="div1_23">
+                    學習並實作<br>
+                    1. 響應式網頁 (HTML/CSS/JS/PHP/MY SQL)<br>
+                    2. ERP系統-Window Form (FoxPro9/SQL Server )<br>
+                    &nbsp; &nbsp; a. 進貨銷貨存貨模塊<br>
+                    &nbsp; &nbsp; b. 會計模塊
+                </div>
+            </div>
+        </div>
+        <hr class="hr-c1">
+        <div id="div2">
+            <span id="span1">擅長工具 / 技能 Skills</span>
+        </div>
+        <div id="div3">
+            <div class="div3-c1">
+                <div class="div3-c2">網頁技術</div>
+                <ul class="ul-c1">
+                    <li><img src="PHP.png" class="img-c1">PHP</li>
+                    <li><img src="html.png" class="img-c1">HTML / CSS</li>
+                    <li><img src="mysql.png" class="img-c1">MySQL</li>
+                    <li><img src="js.png" class="img-c1">JavaScript</li>
+                    <li><img src="jq.png" class="img-c1">JQuery</li>
+                </ul>
+            </div>
+            <div class="div3-c1">
+                <div class="div3-c2">前後端工具</div>
+                <ul class="ul-c1">
+                    <li><img src="java.png" class="img-c1">JAVA</li>
+                    <li><img src="c++.png" class="img-c1">C++</li>
+                </ul>
+            </div>
+            <div class="div3-c1">
+                <div class="div3-c2">ERP 設計工具</div>
+                <ul class="ul-c1">
+                    <li><img src="fox.png" class="img-c1">Visual FoxPro 9</li>
+                    <li><img src="mssql.png" class="img-c1">SQL Server</li>
+                </ul>
+            </div>  
+        </div>
+        <hr class="hr-c1">
+    </div>
+
 </body>
 
 </html>
