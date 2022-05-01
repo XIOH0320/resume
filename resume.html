@@ -38,7 +38,7 @@
 
         #div0 {
             margin: 40px 10% 300px 10%;
-            padding: 10px 10% 0px 10%;
+            padding: 10px 0px;
             /* text-align: center; */
             width: 80%;
             height: auto;
@@ -208,65 +208,77 @@
         #span2 {
             color: rgb(100, 45, 20)
         }
-        #div7{
+
+        #div7 {
             margin-top: 40px;
             padding: 0 10% 0 10%;
             display: flex;
             flex-direction: column;
             height: auto;
         }
-        #div7_1{
+
+        #div7_1 {
             min-width: 800px;
             display: flex;
             flex-direction: column;
-            justify-content:center;
+            justify-content: center;
             flex-grow: 0.9;
             font-size: 24px;
             /* font-weight: bold; */
         }
-        #div7_11{
+
+        #div7_11 {
             display: flex;
         }
-        #div7_12{
+
+        #div7_12 {
             margin-top: 20px;
             display: flex;
-            justify-content:initial;
+            justify-content: initial;
         }
-        #div7_121,#div7_123{
+
+        #div7_121,
+        #div7_123 {
             display: flex;
-            align-items:center;
+            align-items: center;
             max-width: 50px;
             height: auto;
         }
-        #div7_122{
+
+        #div7_122 {
             display: flex;
-            justify-content:center;
+            justify-content: center;
             width: 900px;
             height: auto;
         }
-        .arrow{
+
+        .arrow {
             width: 100%;
         }
-        #web_pic{
+
+        #web_pic {
             max-width: 96%;
             height: auto;
         }
-        #div7_13{
+
+        #div7_13 {
             display: flex;
             margin-top: 8px;
-            justify-content:center;
+            justify-content: center;
         }
-        #div7_131{
+
+        #div7_131 {
             width: fit-content;
-            padding: 0 10px;
+            padding: 0 20px;
             background-color: cornflowerblue;
             color: white;
             font-size: 24px;
             border-radius: 10px;
-            line-height: 30px;
+            line-height: 32px;
             vertical-align: middle;
         }
-        #div7_2{
+
+        #div7_2 {
             max-width: 84%;
             margin-top: 12px;
             padding-left: 60px;
@@ -274,13 +286,16 @@
             flex-direction: column;
             font-size: 20px;
         }
+
         #ul1 li {
             color: #271f97;
             font-size: 20px;
             line-height: 20px;
             margin-top: 5px;
         }
-        
+        #div7_22{
+            margin-top: 6px;
+        }
     </style>
     <script>
 
@@ -289,16 +304,16 @@
             let myage = new Date().getFullYear() - 2000;
             $('#age').text("( " + myage + "歲 )");
         }
-        $(document).ready(function() {
-            let webStr=["首頁","測試1","測試2"],webCount=0;
-            $('#left_arrow').click(()=>{
-                webCount=(webCount+webStr.length-1)%webStr.length;
-                $('#web_pic').attr('src','web'+webCount+".png");
+        $(document).ready(function () {
+            let webStr = ["首頁", "測試1", "測試2"], webCount = 0;
+            $('#left_arrow').click(() => {
+                webCount = (webCount + webStr.length - 1) % webStr.length;
+                $('#web_pic').attr('src', 'web' + webCount + ".png");
                 $('#div7_131').text(webStr[webCount]);
             })
-            $('#right_arrow').click(()=>{
-                webCount=(webCount+webStr.length+1)%webStr.length;
-                $('#web_pic').attr('src','web'+webCount+".png");
+            $('#right_arrow').click(() => {
+                webCount = (webCount + webStr.length + 1) % webStr.length;
+                $('#web_pic').attr('src', 'web' + webCount + ".png");
                 $('#div7_131').text(webStr[webCount]);
             })
         });
@@ -387,16 +402,22 @@
             </div>
             <div id="div7_2">
                 <div id="div7_21">
-                    此網站可以在首頁瀏覽文章，並提供時間軸功能查看各月份發布的文章，也可透過搜尋欄用關鍵字或標籤(#)查詢特定文章，
-                    點選文章後，
+                    此網站主要用於紀錄發生的新聞並提供他人閱覽，在首頁中可以瀏覽文章，並有提供時間軸功能查看各月份發布的文章，
+                    也可透過搜尋欄用關鍵字或標籤(#)查詢特定文章，
+                    在文章頁面中，除了文章內容外，也可直接看文章附加的YouTube，在發文頁面中，可額外新增標籤(tag)方便其他人進行搜尋，也可
+                    貼上相關的YouTube連結，並可在文章附上1-N張圖片。
                 </div>
-                <ul id="ul1">
-                    <li>使用者帳號密碼登入</li>
-                    <li>匿名登入</li>
-                    <li>帳號註冊</li>
-                    <li>瀏覽/發布/修改 文章</li>
-                    <li>關鍵字&標籤 搜尋</li>
-                </ul>
+                <div id="div7_22">
+                    <div>此網站提供以下功能 :</div>
+                    <ul id="ul1">
+                        <li>使用者帳號密碼登入</li>
+                        <li>匿名登入</li>
+                        <li>帳號註冊</li>
+                        <li>瀏覽/發布/修改 文章</li>
+                        <li>關鍵字&標籤 搜尋</li>
+                    </ul>
+                </div>
+                
             </div>
         </div>
     </div>
