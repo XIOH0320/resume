@@ -240,25 +240,30 @@
         #div7_121,
         #div7_123 {
             display: flex;
-            align-items: center;
-            max-width: 50px;
-            height: auto;
+            /* align-items: center; */
+            justify-content: center;
+            padding-top: 300px;
+            /* width: 700px;
+            height: 500px; */
         }
 
         #div7_122 {
             display: flex;
             justify-content: center;
-            width: 900px;
-            height: auto;
+            margin: 0 10px;
+            width: 840px;
+            /* height: auto; */
         }
 
         .arrow {
-            width: 100%;
+            width:50px;
+            height: 50px;
         }
 
         #web_pic {
-            max-width: 96%;
-            height: auto;
+            width: 840px;
+            /* height: 600px; */
+            max-height: auto;
         }
 
         #div7_13 {
@@ -274,7 +279,7 @@
             color: white;
             font-size: 24px;
             border-radius: 10px;
-            line-height: 32px;
+            line-height: 36px;
             vertical-align: middle;
         }
 
@@ -294,7 +299,14 @@
             margin-top: 5px;
         }
         #div7_22{
-            margin-top: 6px;
+            width: fit-content;
+            border: 1px rgba(0,0,255,0.5) solid;
+            padding: 10px 40px 10px 10px;
+            margin-top: 10px;
+            margin-left: 2%;
+        }
+        #div7_221{
+            margin-bottom:8px;
         }
     </style>
     <script>
@@ -305,15 +317,17 @@
             $('#age').text("( " + myage + "歲 )");
         }
         $(document).ready(function () {
-            let webStr = ["首頁", "測試1", "測試2"], webCount = 0;
+            let webStr = ["首頁", "登入", "註冊","文章","編輯文章","會員資料","發布文章","時間軸"];
+            let webImg=["web-index","web-login","web-register","web-article","web-editA","web-member","web-post","web-timeline"]
+            let webCount = 0;
             $('#left_arrow').click(() => {
                 webCount = (webCount + webStr.length - 1) % webStr.length;
-                $('#web_pic').attr('src', 'web' + webCount + ".png");
+                $('#web_pic').attr('src',  webImg[webCount]+".png");
                 $('#div7_131').text(webStr[webCount]);
             })
             $('#right_arrow').click(() => {
                 webCount = (webCount + webStr.length + 1) % webStr.length;
-                $('#web_pic').attr('src', 'web' + webCount + ".png");
+                $('#web_pic').attr('src',  webImg[webCount]+".png");
                 $('#div7_131').text(webStr[webCount]);
             })
         });
@@ -348,6 +362,7 @@
             <div class="div5-c1">生日 : &nbsp; &nbsp;2000-03-20 <span id="age"></span></div>
             <div class="div5-c1">兵役 : &nbsp; &nbsp;免役</div>
             <div class="div5-c1">居住地 : &nbsp; &nbsp;<img src="location.png" id="img3">新北市鶯歌區</div>
+            <div class="div5-c1">電子信箱 : &nbsp; &nbsp;ckh891111@gmail.com</div>
         </div>
         <hr class="hr-c1">
         <div id="div2">
@@ -388,11 +403,11 @@
         <div id="div7">
             <div id="div7_1">
                 <div id="div7_11">
-                    【 響應式網頁 -&nbsp;<span style="color:rgb(82, 150, 82)">寶島記事 </span> &nbsp;】
+                    【 響應式網頁 -&nbsp;<span style="color:rgb(32, 87, 32)">寶島記事 </span> &nbsp;】
                 </div>
                 <div id="div7_12">
                     <div id="div7_121"><img src="leftarrow.png" class="arrow" id="left_arrow"></div>
-                    <div id="div7_122"><img src="web0.png" id="web_pic">
+                    <div id="div7_122"><img src="web-index.png" id="web_pic">
                     </div>
                     <div id="div7_123"><img src="rightarrow.png" class="arrow" id="right_arrow"></div>
                 </div>
@@ -402,13 +417,13 @@
             </div>
             <div id="div7_2">
                 <div id="div7_21">
-                    此網站主要用於紀錄發生的新聞並提供他人閱覽，在首頁中可以瀏覽文章，並有提供時間軸功能查看各月份發布的文章，
+                    此網站用於發布文章並可提供他人閱覽，在首頁中可以瀏覽文章，並提供時間軸查看各月份發布的文章，
                     也可透過搜尋欄用關鍵字或標籤(#)查詢特定文章，
                     在文章頁面中，除了文章內容外，也可直接看文章附加的YouTube，在發文頁面中，可額外新增標籤(tag)方便其他人進行搜尋，也可
-                    貼上相關的YouTube連結，並可在文章附上1-N張圖片。
+                    貼上相關的YouTube連結，並可於文章內附上1-N張圖片。
                 </div>
                 <div id="div7_22">
-                    <div>此網站提供以下功能 :</div>
+                    <div id="div7_221">此網站提供以下功能 :</div>
                     <ul id="ul1">
                         <li>使用者帳號密碼登入</li>
                         <li>匿名登入</li>
