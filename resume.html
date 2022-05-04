@@ -39,7 +39,7 @@
         }
 
         #div0 {
-            
+
             margin: 40px 0px 300px 0px;
             padding: 10px 0px;
             /* text-align: center; */
@@ -120,9 +120,10 @@
             color: #b5b5ca;
             height: .5em;
             white-space: nowrap;
-            letter-spacing: 800px;
+            letter-spacing: 100vw;
             padding-top: .5em;
             max-width: 80%;
+
         }
 
         .hr-c1::before {
@@ -145,7 +146,7 @@
             margin-top: 30px;
             margin-bottom: 24px;
             padding-left: 12%;
-            padding-right: 12%;
+            /* padding-right: 12%; */
             display: flex;
         }
 
@@ -168,8 +169,8 @@
 
         li {
             font-size: 18px;
-            line-height: 12px;
-            margin-bottom: 4px;
+            line-height: 20px;
+            margin-bottom: 6px;
         }
 
         .img-c1 {
@@ -244,7 +245,7 @@
             display: flex;
             /* align-items: center; */
             justify-content: center;
-            padding-top: 300px;
+            padding-top: 280px;
             /* width: 700px;
             height: 500px; */
         }
@@ -252,17 +253,19 @@
         #div7_122 {
             display: flex;
             justify-content: center;
-            align-content:center;
+            align-content: center;
             flex-direction: column;
             margin: 0 10px;
             width: 840px;
             /* height: auto; */
         }
-        #div7_1221{
+
+        #div7_1221 {
             margin-top: 10px;
             display: flex;
             justify-content: center;
         }
+
         #web_text {
             padding: 0 20px;
             background-color: cornflowerblue;
@@ -272,8 +275,9 @@
             line-height: 36px;
             vertical-align: middle;
         }
+
         .arrow {
-            width:50px;
+            width: 50px;
             height: 50px;
         }
 
@@ -289,10 +293,10 @@
             justify-content: center;
         }
 
-       
+
 
         #div7_2 {
-            max-width: 84%;
+            max-width: 90%;
             margin-top: 12px;
             padding-left: 60px;
             display: flex;
@@ -306,21 +310,60 @@
             line-height: 20px;
             margin-top: 5px;
         }
-        #div7_22{
+
+        #div7_22 {
             width: fit-content;
-            border: 1px rgba(0,0,255,0.5) solid;
+            border: 1px rgba(0, 0, 255, 0.5) solid;
             padding: 10px 40px 10px 10px;
             margin-top: 10px;
             margin-left: 2%;
         }
-        #div7_221{
-            margin-bottom:8px;
+
+        #div7_221 {
+            margin-bottom: 8px;
         }
-        @media only screen and (max-width: 600px){
+
+        @media only screen and (max-width: 700px) {
             #div0 {
                 width: 96%;
             }
+            #div7_1{
+                width:600px;
+            }
+            #div7_12 {
+                width: 600px;
+                flex-direction: column;
+            }
+            #div7_122 {
+                width: 600px;
+                flex-direction: column;
+            }
+            #web_pic {
+                width:100%;
+                height: auto;
+            }
 
+            #div7_121,
+            #div7_123 {
+                margin: 20px 0px;
+                padding: 0px;
+            }
+
+            #div2,
+            #div3,
+            #div4,
+            #div5,
+            #div6,
+            #div7,#div7_2 {
+                /* margin: 0px; */
+                padding-left: 20px;
+                padding-right: 0px;
+            }
+
+            .hr-c1 {
+                /* display: none; */
+                max-width: 96%;
+            }
         }
     </style>
     <script>
@@ -331,17 +374,17 @@
             $('#age').text("( " + myage + "歲 )");
         }
         $(document).ready(function () {
-            let webStr = ["首頁", "登入", "註冊","文章","編輯文章","會員資料","發布文章","時間軸"];
-            let webImg=["web-index","web-login","web-register","web-article","web-editA","web-member","web-post","web-timeline"]
+            let webStr = ["首頁", "登入", "註冊", "文章", "編輯文章", "會員資料", "發布文章", "時間軸"];
+            let webImg = ["web-index", "web-login", "web-register", "web-article", "web-editA", "web-member", "web-post", "web-timeline"]
             let webCount = 0;
             $('#left_arrow').click(() => {
                 webCount = (webCount + webStr.length - 1) % webStr.length;
-                $('#web_pic').attr('src',  webImg[webCount]+".png");
+                $('#web_pic').attr('src', webImg[webCount] + ".png");
                 $('#web_text').text(webStr[webCount]);
             })
             $('#right_arrow').click(() => {
                 webCount = (webCount + webStr.length + 1) % webStr.length;
-                $('#web_pic').attr('src',  webImg[webCount]+".png");
+                $('#web_pic').attr('src', webImg[webCount] + ".png");
                 $('#web_text').text(webStr[webCount]);
             })
         });
@@ -362,7 +405,8 @@
                     1. 響應式網頁 (HTML / CSS / JS / PHP / MY SQL)<br>
                     2. ERP系統-Window Form (FoxPro9 / SQL Server)<br>
                     &nbsp; &nbsp; a. 進貨銷貨存貨模塊<br>
-                    &nbsp; &nbsp; b. 會計財務模塊
+                    &nbsp; &nbsp; b. 會計財務模塊 ( 單一幣別 )<br>
+                    &nbsp; &nbsp; c. 會計財務模塊 ( 多幣別 )<br>
                 </div>
             </div>
         </div>
@@ -422,7 +466,9 @@
                 <div id="div7_12">
                     <div id="div7_121"><img src="leftarrow.png" class="arrow" id="left_arrow"></div>
                     <div id="div7_122"><img src="web-index.png" id="web_pic">
-                        <div id="div7_1221"><div id="web_text">首頁</div></div>
+                        <div id="div7_1221">
+                            <div id="web_text">首頁</div>
+                        </div>
                     </div>
                     <div id="div7_123"><img src="rightarrow.png" class="arrow" id="right_arrow"></div>
                 </div>
@@ -444,7 +490,7 @@
                         <li>關鍵字&標籤 搜尋</li>
                     </ul>
                 </div>
-                
+
             </div>
         </div>
     </div>
