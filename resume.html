@@ -16,6 +16,8 @@
             background-color: rgb(240, 240, 240);
             font-family: "Archivo", "Noto Sans TC", "Noto Sans SC", "Noto Sans HK", "Noto Sans JP", "Noto Sans", "PingFang TC", "Microsoft JhengHei", "PMingLiU", sans-serif;
             color: #333333;
+            display: flex;
+            justify-content: center;
         }
 
         /* div {
@@ -37,10 +39,11 @@
         }
 
         #div0 {
-            margin: 40px 10% 300px 10%;
+            
+            margin: 40px 0px 300px 0px;
             padding: 10px 0px;
             /* text-align: center; */
-            /* width: 100%; */
+            width: 80%;
             height: auto;
         }
 
@@ -117,14 +120,13 @@
             color: #b5b5ca;
             height: .5em;
             white-space: nowrap;
-            letter-spacing: 100vw;
+            letter-spacing: 800px;
             padding-top: .5em;
-            width: 80%;
+            max-width: 80%;
         }
 
         .hr-c1::before {
             content: "\2000\2000";
-            text-decoration: overline;
             text-decoration: overline wavy;
         }
 
@@ -250,11 +252,26 @@
         #div7_122 {
             display: flex;
             justify-content: center;
+            align-content:center;
+            flex-direction: column;
             margin: 0 10px;
             width: 840px;
             /* height: auto; */
         }
-
+        #div7_1221{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        #web_text {
+            padding: 0 20px;
+            background-color: cornflowerblue;
+            color: white;
+            font-size: 24px;
+            border-radius: 10px;
+            line-height: 36px;
+            vertical-align: middle;
+        }
         .arrow {
             width:50px;
             height: 50px;
@@ -272,16 +289,7 @@
             justify-content: center;
         }
 
-        #div7_131 {
-            width: fit-content;
-            padding: 0 20px;
-            background-color: cornflowerblue;
-            color: white;
-            font-size: 24px;
-            border-radius: 10px;
-            line-height: 36px;
-            vertical-align: middle;
-        }
+       
 
         #div7_2 {
             max-width: 84%;
@@ -308,6 +316,12 @@
         #div7_221{
             margin-bottom:8px;
         }
+        @media only screen and (max-width: 600px){
+            #div0 {
+                width: 96%;
+            }
+
+        }
     </style>
     <script>
 
@@ -323,12 +337,12 @@
             $('#left_arrow').click(() => {
                 webCount = (webCount + webStr.length - 1) % webStr.length;
                 $('#web_pic').attr('src',  webImg[webCount]+".png");
-                $('#div7_131').text(webStr[webCount]);
+                $('#web_text').text(webStr[webCount]);
             })
             $('#right_arrow').click(() => {
                 webCount = (webCount + webStr.length + 1) % webStr.length;
                 $('#web_pic').attr('src',  webImg[webCount]+".png");
-                $('#div7_131').text(webStr[webCount]);
+                $('#web_text').text(webStr[webCount]);
             })
         });
         window.addEventListener("load", start, false);
@@ -408,11 +422,9 @@
                 <div id="div7_12">
                     <div id="div7_121"><img src="leftarrow.png" class="arrow" id="left_arrow"></div>
                     <div id="div7_122"><img src="web-index.png" id="web_pic">
+                        <div id="div7_1221"><div id="web_text">首頁</div></div>
                     </div>
                     <div id="div7_123"><img src="rightarrow.png" class="arrow" id="right_arrow"></div>
-                </div>
-                <div id="div7_13">
-                    <div id="div7_131">首頁</div>
                 </div>
             </div>
             <div id="div7_2">
