@@ -108,7 +108,7 @@
             font-size: 16px;
             padding-top: 6px;
             padding-left: 10px;
-            line-height: 22px;
+            line-height: 24px;
             /* flex-wrap: wrap; */
             word-break: break-all;
             word-wrap: break-word;
@@ -208,13 +208,10 @@
             color: rgb(26, 97, 228);
         }
 
-        #span2 {
-            color: rgb(100, 45, 20)
-        }
 
-        #div7 {
+        #div7,#div8,#div9{
             margin-top: 40px;
-            padding: 0 10% 0 10%;
+            padding: 0 0 0 10%;
             display: flex;
             flex-direction: column;
             height: auto;
@@ -234,14 +231,14 @@
             display: flex;
         }
 
-        #div7_12 {
-            margin-top: 20px;
+        #div7_12,#div8_2,#div9_2{
+            margin-top: 30px;
             display: flex;
             justify-content: initial;
         }
 
         #div7_121,
-        #div7_123 {
+        #div7_123,#div8_21,#div8_23,#div9_21,#div9_23{
             display: flex;
             /* align-items: center; */
             justify-content: center;
@@ -250,7 +247,7 @@
             height: 500px; */
         }
 
-        #div7_122 {
+        #div7_122,#div8_22 {
             display: flex;
             justify-content: center;
             align-content: center;
@@ -259,16 +256,23 @@
             width: 840px;
             /* height: auto; */
         }
-
-        #div7_1221 {
+        #div9_22{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            margin: 0 10px;
+            width: 900px;
+        }
+        #div7_1221,#div8_221,#div9_221 {
             margin-top: 10px;
             display: flex;
             justify-content: center;
         }
 
-        #web_text {
+        #web_text,#acc_text,#erp_text{
             padding: 8px 20px;
-            background-color: cornflowerblue;
+            background-color: rgb(56, 101, 185);
             color: white;
             font-size: 24px;
             border-radius: 10px;
@@ -281,10 +285,13 @@
             height: 50px;
         }
 
-        #web_pic {
+        #web_pic,#acc_pic {
             width: 840px;
-            /* height: 600px; */
-            max-height: auto;
+            height: auto;
+        }
+        #erp_pic{
+            width: 900px;
+            height: auto;
         }
 
         #div7_13 {
@@ -305,7 +312,7 @@
         }
 
         .span-c2 {
-            font-size: 22px;
+            /* font-size: 22px; */
             color: rgb(231, 72, 44)
         }
 
@@ -333,7 +340,60 @@
         #div7_221 {
             margin-bottom: 8px;
         }
-        
+        #div8_1,#div9_1{
+            margin-top: 40px;
+            font-size: 24px;
+        }
+        #div8_3,#div9_3{
+            width: 840px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+        #div8_4,#div9_4{
+            width: 900px;
+            margin-left: 10px;
+        }
+        #div8_31,#div9_31{
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        #div8_32,#div9_32{
+            padding-left: 40px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        #div8_41,#div9_41{
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        #div8_42,#div9_42{
+            display: flex;
+            flex-direction: row;
+        }
+        .ul-c1{
+            margin-right: 30px;
+            margin-left: 10px;
+            padding-left: 0px;
+
+        }
+        .li-c1{
+            width: fit-content;
+            padding: 4px;
+            list-style:none;
+            margin: 0px 10px 10px 0px;
+            background-color: rgb(27, 67, 119);
+            color: blanchedalmond;
+            border-radius: 5px;
+            font-size: 20px;
+            line-height:24px ;
+        }
+        .li-c2{
+            width: fit-content;
+            list-style:none;
+            font-size: 18px;
+            line-height:24px ;
+            padding-left: 4px;
+        }
     </style>
     <script>
 
@@ -344,8 +404,14 @@
         }
         $(document).ready(function () {
             let webStr = ["首頁", "登入", "註冊", "文章", "編輯文章", "會員資料", "發布文章", "時間軸"];
-            let webImg = ["web-index", "web-login", "web-register", "web-article", "web-editA", "web-member", "web-post", "web-timeline"]
-            let webCount = 0;
+            let webImg = ["web-index", "web-login", "web-register", "web-article", "web-editA", "web-member", "web-post", "web-timeline"];
+            let accStr=["傳票作業","會計科目基本檔","日記帳","日記帳-報表","日記帳-EXCEL","立沖帳餘額表","期末庫存金額輸入(可自動拋轉傳票)","匯率檔維護","匯率評量作業"];
+            let accImg=["acc-1","acc-2","acc-31","acc-32","acc-33","acc-4","acc-5","acc-6","acc-7"];
+            let erpStr=["請購單","採購訂單","進貨驗收入庫單","客戶訂單","出貨單","客戶基本檔","廠商基本檔"];
+            let erpImg=["erp-1","erp-2","erp-3","erp-4","erp-5","erp-6","erp-7","erp-8"];
+            let webCount = 0,accCount=0,erpCount=0;
+
+
             $('#left_arrow').click(() => {
                 webCount = (webCount + webStr.length - 1) % webStr.length;
                 $('#web_pic').attr('src', webImg[webCount] + ".png");
@@ -355,6 +421,26 @@
                 webCount = (webCount + webStr.length + 1) % webStr.length;
                 $('#web_pic').attr('src', webImg[webCount] + ".png");
                 $('#web_text').text(webStr[webCount]);
+            })
+            $('#left_arrow1').click(() => {
+                accCount = (accCount + accStr.length - 1) % accStr.length;
+                $('#acc_pic').attr('src', accImg[accCount] + ".png");
+                $('#acc_text').text(accStr[accCount]);
+            })
+            $('#right_arrow1').click(() => {
+                accCount = (accCount + accStr.length + 1) % accStr.length;
+                $('#acc_pic').attr('src', accImg[accCount] + ".png");
+                $('#acc_text').text(accStr[accCount]);
+            })
+            $('#left_arrow2').click(() => {
+                erpCount = (erpCount + erpStr.length - 1) % erpStr.length;
+                $('#erp_pic').attr('src', erpImg[erpCount] + ".png");
+                $('#erp_text').text(erpStr[erpCount]);
+            })
+            $('#right_arrow2').click(() => {
+                erpCount = (erpCount + erpStr.length + 1) % erpStr.length;
+                $('#erp_pic').attr('src', erpImg[erpCount] + ".png");
+                $('#erp_text').text(erpStr[erpCount]);
             })
         });
         window.addEventListener("load", start, false);
@@ -385,7 +471,7 @@
         </div>
         <div id="div5">
             <div class="div5-c1">學歷 : &nbsp; &nbsp;<img src="NTOU2.png" id="img2"><span id="span1">國立臺灣海洋大學 資訊工程系
-                </span><span id="span2">畢業</span></div>
+                </span>畢業</div>
             <div class="div5-c1">生日 : &nbsp; &nbsp;2000-03-20 <span id="age"></span></div>
             <div class="div5-c1">兵役 : &nbsp; &nbsp;免役</div>
             <div class="div5-c1">居住地 : &nbsp; &nbsp;<img src="location.png" id="img3">新北市鶯歌區</div>
@@ -409,9 +495,8 @@
             <div class="div3-c1">
                 <div class="div3-c2">前後端工具</div>
                 <ul class="ul-c1">
-                    <li><img src="java.png" class="img-c1">JAVA</li>
+                    <li><img src="java.png" class="img-c1">Java</li>
                     <li><img src="c++.png" class="img-c1">C++</li>
-                    <li><img src="mysql.png" class="img-c1">MySQL</li>
                     <li><img src="mssql.png" class="img-c1">SQL Server</li>
                 </ul>
             </div>
@@ -466,6 +551,142 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+        <div id="div8">
+            <div id="div8_1">
+                【 ERP -&nbsp;<span style="color:rgb(223, 18, 18)">會計系統(多幣別)</span> &nbsp;】
+            </div>
+            <div id="div8_2">
+                <div id="div8_21"><img src="leftarrow.png" class="arrow" id="left_arrow1"></div>
+                <div id="div8_22"><img src="acc-1.png" id="acc_pic">
+                    <div id="div8_221">
+                        <div id="acc_text">傳票作業</div>
+                    </div>
+                </div>
+                <div id="div8_23"><img src="rightarrow.png" class="arrow" id="right_arrow1"></div>
+            </div>
+            <div id="div8_3">
+                <div id="div8_31">系統介紹</div>
+                <div id="div8_32">
+                    本會計系統除了有基本的傳票、報表作業，還包含<span class="span-c2">多幣別</span>及<span class="span-c2">立沖帳</span>模組，結轉採<span class="span-c2">年度結轉</span>
+                    ，可修改<span class="span-c2">去年今年明年</span>的傳票，報表簡單明瞭，都可以直接轉成EXCEL檔，在輸入傳票時可選擇想要的幣別，一張傳票可<span class="span-c2">包含多種幣別</span>
+                    ，本系統有<span class="span-c2">匯率評量功能</span>，可在月底平衡匯率變更在報表造成的波動，輸入傳票時可立帳沖帳，並可查看相關的<span class="span-c2">立沖帳報表</span>。
+                </div>
+            </div>
+            <div id="div8_4">
+                <div id="div8_41">本系統功能</div>
+                <div id="div8_42">
+                    <ul class="ul-c1">
+                        <li class="li-c1" style="background-color: rgb(37, 40, 226);">基本檔作業</li>
+                        <li class="li-c2">會計科目基本檔</li>
+                        <li class="li-c2">帳號基本檔</li>
+                        <li class="li-c2">立沖基本檔</li>
+                        <li class="li-c2">職位基本檔</li>
+                        <li class="li-c2">片語基本檔</li>
+                    </ul>
+                    <ul class="ul-c1">
+                        <li class="li-c1" style="background-color: rgb(233, 70, 64);">日常報表作業</li>
+                        <li class="li-c2">日記帳</li>
+                        <li class="li-c2">分類帳</li>
+                        <li class="li-c2">本期試算表</li>
+                        <li class="li-c2">累計試算表</li>
+                        <li class="li-c2">科目餘額彙總表</li>
+                        <li class="li-c2" style="color: rgb(218, 62, 62); font-weight: bold;">立沖帳報表</li>
+                    </ul>
+                    <ul class="ul-c1">
+                        <li class="li-c1" style="background-color: rgb(221, 117, 48);">決策報表</li>
+                        <li class="li-c2">損益表-當月</li>
+                        <li class="li-c2">損益表-與上月同比</li>
+                        <li class="li-c2">損益表-全年12月</li>
+                        <li class="li-c2">資產負債表</li>
+                    </ul>
+                    <ul class="ul-c1">
+                        <li class="li-c1" style="background-color: rgb(33, 156, 22);">匯率作業</li>
+                        <li class="li-c2">各幣別匯率設定</li>
+                        <li class="li-c2" style="color: rgb(218, 62, 62); font-weight: bold;">匯率評量作業</li>
+                        <li class="li-c2">匯率防呆設定</li>
+                    </ul>
+                    <ul class="ul-c1" style="margin-right: 0px;">
+                        <li class="li-c1" style="background-color: rgb(100, 100, 100);">系統作業</li>
+                        <li class="li-c2">傳票作業</li>
+                        <li class="li-c2">年度結轉</li>
+                        <li class="li-c2">年度倒推</li>
+                        <li class="li-c2">作業權限設定</li>
+                        <li class="li-c2">版本序號控管</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="div9">
+            <div id="div9_1">
+                【 ERP -&nbsp;<span style="color:rgb(21, 18, 160)">進銷存系統</span> &nbsp;】
+            </div>
+            <div id="div9_2">
+                <div id="div9_21"><img src="leftarrow.png" class="arrow" id="left_arrow2"></div>
+                <div id="div9_22"><img src="erp-1.png" id="erp_pic">
+                    <div id="div9_221">
+                        <div id="erp_text">請購單</div>
+                    </div>
+                </div>
+                <div id="div9_23"><img src="rightarrow.png" class="arrow" id="right_arrow2"></div>
+            </div>
+            <div id="div9_3">
+                <div id="div9_31">系統介紹</div>
+                <div id="div9_32">
+                    本套系統有基本的進貨、銷貨、存貨作業，也可產出相關的應付報表、應收帳款報表，
+                    本系統的銷項發票綁定銷貨單(檔頭)，也可生成銷項發票報表，
+                    提供多倉別的庫存管理，可將物料由不同的倉庫進庫/出庫。
+                </div>
+            </div>
+            <div id="div9_4">
+                <div id="div9_41">本系統功能</div>
+                <div id="div9_42">
+                    <ul class="ul-c1">
+                        <li class="li-c1">基本檔作業</li>
+                        <li class="li-c2">成品/料件基本檔</li>
+                        <li class="li-c2">廠商基本檔</li>
+                        <li class="li-c2">客戶基本檔</li>
+                        <li class="li-c2">業務員/員工基本檔</li>
+                        <li class="li-c2">付款方式檔</li>
+                        <li class="li-c2">倉庫基本檔</li>
+                    </ul>
+                    <ul class="ul-c1">
+                        <li class="li-c1">進貨作業</li>
+                        <li class="li-c2">請購單作業</li>
+                        <li class="li-c2">採購訂單</li>
+                        <li class="li-c2">進貨驗收入庫單</li>
+                        <li class="li-c2">進貨退出折讓單</li>
+                        <li class="li-c2">廠商對帳單</li>
+                        <li class="li-c2">應付帳款沖帳作業</li>
+                    </ul>
+                    <ul class="ul-c1">
+                        <li class="li-c1">銷貨作業</li>
+                        <li class="li-c2">客戶訂單</li>
+                        <li class="li-c2">出貨單</li>
+                        <li class="li-c2">出貨退回單</li>
+                        <li class="li-c2">客戶對張單</li>
+                        <li class="li-c2">應收帳款沖帳作業</li>
+                        <li class="li-c2">應收帳款報表</li>
+                        <li class="li-c2">銷項發票報表</li>
+                    </ul>
+                    <ul class="ul-c1">
+                        <li class="li-c1">庫存作業</li>
+                        <li class="li-c2" style="color:rgb(226, 52, 52); font-weight: bold;">**學習中**</li>
+                        <li class="li-c2">生產領料單(出庫)</li>
+                        <li class="li-c2">生產入庫單(入庫)</li>
+                        <li class="li-c2">多倉庫調撥單</li>
+                        <li class="li-c2">庫存報表</li>
+                    </ul>
+                    <ul class="ul-c1" style="margin-right: 0px;">
+                        <li class="li-c1">系統作業</li>
+                        <li class="li-c2">參數設定</li>
+                        <li class="li-c2">作業權限設定</li>
+                        <li class="li-c2">清帳開檔作業</li>
+                        <li class="li-c2">版本序號控管</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
